@@ -11,7 +11,7 @@ app.use(express.json());
 
 
 app.get("/", (req, res) => {
-  res.send("Server is running 🚀");
+  res.send("Server is sdaf running 🚀");
 });
 
 
@@ -19,7 +19,7 @@ mongoose.connect(`mongodb://libraryAdmin:libraryPass@192.168.1.115:27018/library
     autoIndex:true
 }).then(()=>{
     console.log("Connected to MongoDB")
-    app.listen(3000 , ()=>{
+    app.listen(PORT , ()=>{
         console.log(`Server is running on http://localhost:${PORT}`)
     })
 }).catch(error =>{
