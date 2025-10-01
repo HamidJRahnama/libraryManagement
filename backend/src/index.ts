@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import { getAllUsers } from "./controllers/user/userController.ts";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,6 +15,9 @@ app.get("/", (req, res) => {
   res.send("Server is sdaf running 🚀");
 });
 
+app.use(`/`, getAllUsers)
+
+
 
 mongoose.connect(`mongodb://libraryAdmin:libraryPass@192.168.1.115:27018/libraryManagement?authSource=admin`,{
     autoIndex:true
@@ -25,7 +29,3 @@ mongoose.connect(`mongodb://libraryAdmin:libraryPass@192.168.1.115:27018/library
 }).catch(error =>{
     console.log("Error connecting to MongoDB:", error )
 })
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});

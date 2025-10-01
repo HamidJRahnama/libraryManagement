@@ -3,7 +3,7 @@ import authMiddleware from "../middlewares/authMiddleware.ts";
 
 const router = Router()
 
-router.use(authMiddleware)
+// router.use(authMiddleware)
 
 router.get("/", async (req:Request , res:Response)=>{
 
